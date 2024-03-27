@@ -1,7 +1,7 @@
 <h1>Create a New User</h1>
 
-<form action="<%= users_path %>" method="post" accept-charset="UTF-8">
-  <%= csrf_meta_tags %>
+<%= form_with(model: @user, url: users_path, method: :post) do |form| %>
+  <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
 
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -15,21 +15,21 @@
   <% end %>
 
   <div class="field">
-    <%= label_tag "user_username", "Username" %>
-    <%= text_field_tag "user[username]", nil, id: "user_username" %>
+    <%= form.label :username, "Your user name here" %>
+    <%= form.text_field :username, name: "user[username]", value: "JohnDoe" %>
   </div>
 
   <div class="field">
-    <%= label_tag "user_email", "Email" %>
-    <%= email_field_tag "user[email]", nil, id: "user_email" %>
+    <%= form.label :email %>
+    <%= form.email_field :email, name: "user[email]", placeholder: "example@example.com" %>
   </div>
 
   <div class="field">
-    <%= label_tag "user_password", "Password" %>
-    <%= password_field_tag "user[password]", nil, id: "user_password" %>
+    <%= form.label :password %>
+    <%= form.password_field :password, name: "user[password]", placeholder: "Enter your password" %>
   </div>
 
   <div class="actions">
-    <%= submit_tag "Create User" %>
+    <%= form.submit "Create User" %>
   </div>
-</form>
+<% end %>

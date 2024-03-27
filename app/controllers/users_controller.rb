@@ -4,6 +4,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    # Empty method for the create action
+    @user = User.new(user_params)
+    if @user.save
+      # Handle successful user creation
+      redirect_to users_url # Redirect to user's show page
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :email, :password)
   end
 end
