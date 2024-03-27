@@ -15,21 +15,21 @@
   <% end %>
 
   <div class="field">
-    <label for="user_username">Username</label>
-    <input type="text" id="user_username" name="user[username]">
+    <%= label_tag "user_username", "Username" %>
+    <%= text_field_tag "user[username]", nil, id: "user_username" %>
   </div>
 
   <div class="field">
-    <label for="user_email">Email</label>
-    <input type="email" id="user_email" name="user[email]">
+    <%= label_tag "user_email", "Email" %>
+    <%= email_field_tag "user[email]", nil, id: "user_email" %>
   </div>
 
   <div class="field">
-    <label for="user_password">Password</label>
-    <input type="password" id="user_password" name="user[password]">
+    <%= label_tag "user_password", "Password" %>
+    <%= password_field_tag "user[password]", nil, id: "user_password" %>
   </div>
 
   <div class="actions">
-    <input type="submit" value="Create User">
+    <%= submit_tag "Create User" %>
   </div>
 </form>
