@@ -14,7 +14,7 @@ To get started with this project, simply clone the repository to your local mach
 2. Set up the database with `rails db:migrate`.
 3. (Optional) Seed the database with sample data using `rails db:seed`.
 4. Start the Rails server with `rails server`.
-5. Open your web browser and navigate to `http://localhost:3000` to view the project.
+5. Open your web browser and navigate to `http://localhost:3000/users` to view the project.
 
 ## Usage
 
